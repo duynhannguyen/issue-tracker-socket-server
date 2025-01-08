@@ -9,7 +9,13 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
-app.use(cors(["http://localhost:3001", "http://localhost:3000"]));
+app.use(
+  cors([
+    "http://localhost:3001",
+    "https://issue-tracker-rose.vercel.app",
+    "http://localhost:3000",
+  ])
+);
 // app.use("/api/v1", appRouter);
 const server = app.listen(process.env.PORT, () => {
   console.log(`Server is running on PORT ${process.env.PORT}`);
